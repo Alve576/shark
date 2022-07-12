@@ -11,7 +11,7 @@ position:relative;
 }
 .small-shark{
   position:absolute;
-  bottom:130px;
+  bottom:120px;
   z-index:50;
   left:50%;
   width:120px;
@@ -25,8 +25,8 @@ position:relative;
     font-family: "Geom Graphic";
     font-weight: 700;
     color: #fff;
-    font-size: 1.5rem;
-    text-align:center
+    font-size: 1.2rem;
+    text-align:center;
   }
   .timeline-title {
     font-family: "Geom Graphic";
@@ -230,7 +230,6 @@ position:relative;
 `;
 const LaunchGivewayAndRoadMap = ({ id, title, data, img, img2, padding }) => {
   return (
-    <>
       <Wrapper id={id} className={padding ? "py-5" : "pb-0"}>
         <img src={img} alt="" className="shark" />
         <Col xs={11} xxl={8} className={`mx-auto  ${padding && "pb-5"}`}>
@@ -265,7 +264,6 @@ const LaunchGivewayAndRoadMap = ({ id, title, data, img, img2, padding }) => {
         
       </Wrapper>
       
-    </>
   );
 };
 export default LaunchGivewayAndRoadMap;
