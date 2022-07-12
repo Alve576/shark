@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   }
   .image-container {
     width: 100%;
+    cursor : pointer;
     padding: 20px 20px 80px 20px;
   }
   .nameAndPositon {

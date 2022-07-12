@@ -11,7 +11,7 @@ position:relative;
 }
 .small-shark{
   position:absolute;
-  bottom:90px;
+  bottom:130px;
   z-index:50;
   left:50%;
   width:120px;
@@ -21,6 +21,13 @@ position:relative;
     font-size: 3.75rem;
     
 }
+  .bottom-text{
+    font-family: "Geom Graphic";
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align:center
+  }
   .timeline-title {
     font-family: "Geom Graphic";
     font-weight: 700;
@@ -120,6 +127,10 @@ position:relative;
     .timeline-title {
         font-size: 1.5rem;
       }
+    .bottom-text{
+        font-size: 1.1rem;
+
+    }
     .timeline-subtitle {
         font-size: 1rem;
     }
@@ -219,36 +230,42 @@ position:relative;
 `;
 const LaunchGivewayAndRoadMap = ({ id, title, data, img, img2, padding }) => {
   return (
-    <Wrapper id={id} className={padding ? "py-5" : "pb-0"}>
-      <img src={img} alt="" className="shark" />
-      <Col xs={11} xxl={8} className={`mx-auto  ${padding && "pb-5"}`}>
-        <h2 className="title pb-5">
-          {title}
-          <span className="exlamation">ACTIVATIONS</span>
-        </h2>
-        <Chrono mode="VERTICAL_ALTERNATING">
-          {data.map((el, i) => (
-            <div
-              key={i}
-              className={`d-flex roadmap-data flex-column mt-0  ${
-                i % 2 === 0 ? "main-container" : "main-container2"
-              }`}
-              data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-            >
-              <div className="data-top-visible">
-                <p className="timeline-subtitle top-text mt-1 mt-sm-2">{el.text1}</p>
-                <span className="timeline-title">{el.title}</span>
-                <span className="timeline-subtitle">{el.text2}</span>
+    <>
+      <Wrapper id={id} className={padding ? "py-5" : "pb-0"}>
+        <img src={img} alt="" className="shark" />
+        <Col xs={11} xxl={8} className={`mx-auto  ${padding && "pb-5"}`}>
+          <h2 className="title pb-5">
+            {title}
+            <span className="exlamation">ACTIVATIONS</span>
+          </h2>
+          <Chrono mode="VERTICAL_ALTERNATING">
+            {data.map((el, i) => (
+              <div
+                key={i}
+                className={`d-flex roadmap-data flex-column mt-0  ${
+                  i % 2 === 0 ? "main-container" : "main-container2"
+                }`}
+                data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+              >
+                <div className="data-top-visible">
+                  <span className="timeline-subtitle">{el.title}</span>
+                  <p className="timeline-title top-text mt-1 mt-sm-2">{el.text1}</p>
+                  <span className="timeline-subtitle">{el.text2}</span>
+                </div>
+                <div className="data-hidden">
+                  <span className="timeline-subtitle text-p">{el.text3}</span>
+                </div>
+              
               </div>
-              <div className="data-hidden">
-                <span className="timeline-subtitle text-p">{el.text3}</span>
-              </div>
-            </div>
-          ))}
-        </Chrono>
-      </Col>
-      <img src={img2} alt="" className="small-shark" />
-    </Wrapper>
+            ))}
+          </Chrono>
+        </Col>
+        <img src={img2} alt="" className="small-shark" />
+        <p className="bottom-text mt-1 mt-sm-2">FUTURE EVENTS WILL BE HELD 1-2 TIMES PER YEAR.</p>
+        
+      </Wrapper>
+      
+    </>
   );
 };
 export default LaunchGivewayAndRoadMap;
